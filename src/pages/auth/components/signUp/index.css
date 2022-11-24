@@ -1,0 +1,85 @@
+.sign-up-wrap {
+  width: 100vw;
+}
+.sign-up-wrap-leave {
+  width: 0vw;
+  animation: sign-up-wrap-leave 3s;
+}
+@keyframes sign-up-wrap-leave {
+  from {
+    width: 100vw;
+  }
+  to {
+    width: 0vw;
+  }
+}
+.sign-up-wrap-active {
+  width: 100vw;
+  animation: sign-up-wrap-active 3s;
+}
+@keyframes sign-up-wrap-active {
+  from {
+    width: 0vw;
+  }
+  to {
+    width: 100vw;
+  }
+}
+.sign-up {
+  position: relative;
+  z-index: 3;
+  background-color: #104050;
+  width: 35vw;
+  height: 100vh;
+  left: 65vw;
+}
+.sign-up-leave {
+  position: relative;
+  z-index: 3;
+  background-color: #104050;
+  width: 35vw;
+  height: 100vh;
+  left: -35vw;
+  animation: sign-up-leave 3s;
+}
+@keyframes sign-up-leave {
+  from {
+    left: 65vw;
+  }
+  to {
+    left: -35vw;
+  }
+}
+.sign-up-active {
+  position: relative;
+  z-index: 3;
+  background-color: #104050;
+  width: 35vw;
+  height: 100vh;
+  left: 65vw;
+  animation: sign-up-active 3s;
+}
+@keyframes sign-up-active {
+  from {
+    left: -35vw;
+  }
+  to {
+    left: 65vw;
+  }
+}
+
+.sign-up-title {
+  right: 5vw;
+}
+.sign-up-btn{
+    width: 100%;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+}
+.sign-up-svg{
+    width: 30px;
+    margin-left: 10px;
+    fill: #FFEFD5;
+    margin-bottom: 3px;
+}
