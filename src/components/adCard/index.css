@@ -2,6 +2,7 @@
     padding-top: 70px;
     display: flex;
     justify-content: space-between;
+    height: fit-content;
 }
 .card:last-child{
     padding-bottom: 70px;
@@ -53,6 +54,11 @@
     margin-right: 25px;
     cursor: pointer;
     transition: 2s;
+    background-color: transparent;
+}
+.card-btn-box{
+    display: flex;
+    margin-right: 25px;
 }
 .card-btn:hover{
     background-color: #659DBD;
