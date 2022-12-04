@@ -1,0 +1,26 @@
+.devices {
+  background-color: #104050;
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+.devices-content {
+  padding: 0 10%;
+  margin-top: 60px;
+}
+.devices-btn {
+  padding: 15px 20px 12px 20px;
+  border: 3px solid #659dbd;
+  border-radius: 20px;
+  margin-right: 25px;
+  cursor: pointer;
+  transition: 2s;
+  background-color: transparent;
+  font-family: var(--mainFont);
+  font-weight: 600;
+  font-size: 23px;
+  text-transform: uppercase;
+  color: #ffefd5;
+}
+.devices-btn:hover {
+  background-color: #659dbd;
+}

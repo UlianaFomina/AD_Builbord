@@ -23,6 +23,7 @@ export const CreateAd = ({ ...props }) => {
             {...register("title")}
             placeholder="title"
             minLength={3}
+            maxLength={20}
             className="create-ad-input"
             required
           />
