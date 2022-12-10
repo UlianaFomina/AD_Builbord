@@ -1,0 +1,7 @@
+.users{
+    padding: 60px 5%;
+}
+.users-list{
+    display: flex;
+    flex-direction: column;
+}

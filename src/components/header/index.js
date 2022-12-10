@@ -20,6 +20,7 @@ export const Header = ({ ...props }) => {
         </NavLink>
         <NavLink to="/ad" className="header-right-link">My Ad</NavLink>
         <NavLink to="/devices" className="header-right-link">Devices</NavLink>
+        <NavLink to="/users" className="header-right-link">Users</NavLink>
       </div>
       <div className="header-left">
         <p className="header-left-username">username</p>
