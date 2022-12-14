@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import { useForm } from "react-hook-form";
 import "./index.css";
+import {Context} from "../../../../index";
+import {observer} from "mobx-react-lite";
+import {useNavigate} from "react-router-dom";
 
 export const SignIn = ({ ...props }) => {
   let name1 = document.getElementsByClassName("sign-in-wrap");
@@ -23,6 +26,12 @@ export const SignIn = ({ ...props }) => {
     el2[0].classList.remove("sign-up-leave");
   }
   const { register, handleSubmit } = useForm();
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const {store} = useContext(Context)
+  const navigate = useNavigate()
+
   return (
     <div className="sign-in-wrap">
       <div className="sign-in">
@@ -31,19 +40,25 @@ export const SignIn = ({ ...props }) => {
           <form
             className="auth-form sign-in-form"
             onSubmit={handleSubmit((data) => {
-              console.log(data);
+              store.login(username, password).then(r => {
+                navigate('/main')
+            })
             })}
           >
             <input
-              {...register("email")}
-              placeholder="email"
-              type="email"
+              {...register("username")}
+              placeholder="username"
+              type="text"
               className="auth-input sign-in-form-input"
+              onChange={e => setUsername(e.target.value)}
+              value={username}
             />
             <input
               {...register("password")}
               placeholder="password"
               className="auth-input sign-in-form-input"
+              onChange={e => setPassword(e.target.value)}
+              value={password}
             />
             <div className="auth-btn-box sign-in-btn-box">
               <button
@@ -69,3 +84,5 @@ export const SignIn = ({ ...props }) => {
     </div>
   );
 };
+
+export default observer(SignIn)

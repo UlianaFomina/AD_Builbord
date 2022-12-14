@@ -9,7 +9,7 @@ export const Auth = ({ ...props }) => {
     <div className="auth">
       <video
         loop="loop"
-        autoplay="autoplay"
+        autoPlay="autoplay"
         muted="muted"
         className="auth-bg"
       >

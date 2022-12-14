@@ -1,8 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import "./index.css";
+import AuthService from "../../api/service/AuthService";
 
 export const Header = ({ ...props }) => {
+    const navigate = useNavigate()
+    const username = localStorage.getItem('username')
+
+    function logout() {
+        AuthService.logout().then(r => navigate('/'));
+    }
+
   return (
     <div className="header">
       <div className="header-right">
@@ -23,9 +31,9 @@ export const Header = ({ ...props }) => {
         <NavLink to="/users" className="header-right-link">Users</NavLink>
       </div>
       <div className="header-left">
-        <p className="header-left-username">username</p>
-        <div className="header-left-btn">
-          <p className="header-left-btn-text">Log out</p>
+        <p className="header-left-username">{username}</p>
+        <div className="header-left-btn" onClick={logout}>
+          <p className="header-left-btn-text">Logout</p>
         </div>
       </div>
     </div>

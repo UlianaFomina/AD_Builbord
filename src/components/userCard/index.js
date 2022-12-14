@@ -2,12 +2,14 @@ import React from "react";
 import "./index.css";
 
 export const UserCard = ({ ...props }) => {
+    const email = props.email
+    const username = props.username
   return (
     <div className="user-card">
       <div className="user-card-content">
-        <p className="user-card-title">Username</p>
+        <p className="user-card-title">{username}</p>
         <a href="mailTo:email@mail.com" className="user-card-link">
-          email@mail.com
+            {email}
         </a>
       </div>
       <div className="user-card-content">

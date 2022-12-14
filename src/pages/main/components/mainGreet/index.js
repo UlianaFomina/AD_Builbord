@@ -9,7 +9,7 @@ export const MainGreet = ({ ...props }) => {
     <div className="main-greet-wrap">
       <video
         loop="loop"
-        autoplay="autoplay"
+        autoPlay="autoplay"
         muted="muted"
         className="main-greet-bg"
       >
@@ -40,7 +40,7 @@ export const MainGreet = ({ ...props }) => {
             width="96px"
             height="96px"
             viewBox="0 0 96 96"
-            enable-background="new 0 0 96 96"
+            enableBackground="new 0 0 96 96"
           >
             <switch>
               <foreignObject
