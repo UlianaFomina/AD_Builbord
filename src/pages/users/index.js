@@ -30,7 +30,7 @@ export const Users = ({...props}) => {
                 <button className="user-card-btn export-button" onClick={PdfExportService.exportUsers}>Export Users</button>
                 <div className="users-list">
                     {users.map(el => {
-                        return (<UserCard email={el.email} username={el.username}/>)
+                        return (<UserCard id={el.id} status={el.isBlocked} email={el.email} username={el.username}/>)
                     })}
                 </div>
             </div>

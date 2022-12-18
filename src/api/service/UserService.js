@@ -10,4 +10,9 @@ export default class UserService {
         let resultUsers = await api.get('/api/v1/user');
         return resultUsers;
     }
+
+    static async toggleUserStatus(userId){
+        const id = Number(userId)
+        await api.delete(`/api/v1/user/${id}`);
+    }
 }
