@@ -1,0 +1,93 @@
+.sign-in-wrap{
+    width: 100vw;
+    transition: 3s;
+}
+.sign-in-wrap-leave{
+    width: 0vw;
+    animation: sign-in-wrap-leave 3s;
+}
+@keyframes sign-in-wrap-leave {
+    from{
+        width: 100vw;
+    }
+    to{
+        width: 0vw;
+    }
+}
+.sign-in-wrap-active{
+    width: 100vw;
+    animation: sign-in-wrap-active 3s;
+}
+@keyframes sign-in-wrap-active {
+    from{
+        width: 0vw;
+    }
+    to{
+        width: 100vw;
+    }
+}
+.sign-in{
+    position: relative;
+    z-index: 3;
+    background-color: #104050;
+    width: 35vw;
+    height: 100vh;
+}
+.sign-in-leave{
+    position: relative;
+    z-index: 3;
+    background-color: #104050;
+    width: 35vw;
+    height: 100vh;
+    left: 65vw;
+    animation: sign-in-leave 3s;
+}
+@keyframes sign-in-leave {
+    from{
+        left: 0;
+    }
+    to{
+        left: 0;
+    }
+}.sign-in-active{
+    position: relative;
+    z-index: 3;
+    background-color: #104050;
+    width: 35vw;
+    height: 100vh;
+    animation: sign-in-active 3s;
+}
+@keyframes sign-in-active {
+    from{
+        left: 100vw;
+    }
+    to{
+        left: 0vw;
+    }
+}
+
+.sign-in-title{
+    left: 19vw;
+}
+.sign-in-form{
+    position: relative;
+}
+.sign-in-form-input{
+    display: flex;
+    align-self: end;
+}
+.sign-in-btn-box{
+    justify-content: flex-end;
+}
+.sign-in-btn{
+    width: 100%;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+}
+.sign-in-svg{
+    width: 30px;
+    margin-right: 10px;
+    fill: #FFEFD5;
+    margin-bottom: 3px;
+}

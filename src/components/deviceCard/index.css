@@ -1,0 +1,29 @@
+.device-card{
+    display: flex;
+    margin: 20px 0;
+    padding:  30px 10px;
+    border-bottom: 4px solid #659DBD;
+    justify-content: space-between;
+    align-items: center;
+}
+.device-card:first-child{
+    border-top:  4px solid #659DBD;
+    margin-top: 50px;
+}
+.device-card-text{
+    font-family: var(--mainFont);
+    font-weight: 600;
+    font-size: 25px;
+    color: #FFEFD5
+}
+.device-card-sub{
+    margin-bottom: 20px;
+}
+.device-card-title{
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.device-card-btn:last-child{
+    margin: 0;
+}

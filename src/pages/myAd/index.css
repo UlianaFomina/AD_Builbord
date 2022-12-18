@@ -1,0 +1,52 @@
+.ad{
+    background-color: #104050;
+    min-height: 100vh;
+}
+.ad-list{
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 150px;
+    padding-bottom: 150px;
+}
+.ad-card-content1{
+    width: 100%;
+}
+.ad-card-content2{
+    margin-top: 40px;
+    width: 100%;
+}
+.ad-card-title{
+    font-size: 35px;
+    font-family: var(--mainFont);
+    color: #FFEFD5; 
+}
+.ad-card-btn-wrap{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.ad-card-btn-box{
+    margin-top: 20px;
+    display: flex;
+}
+.ad-create{
+    padding: 0 5%;
+    margin:  60px 0;
+}
+.ad-create-btn{
+    padding: 15px 20px 12px 20px;
+    border: 3px solid #659DBD;
+    border-radius: 20px;
+    margin-right: 25px;
+    cursor: pointer;
+    transition: 2s;
+    background-color: transparent;
+    font-family: var(--mainFont);
+    font-weight: 600;
+    font-size: 23px;
+    text-transform: uppercase;
+    color: #FFEFD5
+}
+.ad-create-btn:hover{
+    background-color: #659DBD;
+}

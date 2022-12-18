@@ -1,0 +1,80 @@
+.create-dev{
+    padding: 100px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+}
+.create-dev-box{
+  display: flex;
+  flex-direction: column; 
+}
+.create-dev-title{
+    font-size: 80px;
+    font-family: var(--titleFont);
+    color: #FFEFD5;
+    text-transform: uppercase;
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+.create-dev-form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.create-dev-input{
+    width: 40%;
+    background-color: #659DBD;
+    border: 2px solid #659DBD  ;
+    font-family: var(--mainFont);
+    color: #FFEFD5;
+    font-size: 25px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    padding: 7px 10px;
+}
+.create-dev-input:focus{
+    border: 2px solid #FFEFD5  ;
+}
+.create-dev-input::placeholder{
+    font-family: var(--mainFont);
+    color: #cfc9c0;
+    font-size: 25px;
+}
+.create-dev-select-box{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.create-dev-text{
+    font-family: var(--mainFont);
+    color: #FFEFD5;
+    font-size: 25px;
+    margin-right: 30px;
+}
+.create-dev-select{
+    width: fit-content;
+    margin: 0;
+}
+.create-dev-btn{
+    background-color: transparent;
+    border: 3px solid #659DBD;
+    display: flex;
+    width: fit-content;
+    font-family: var(--mainFont);
+    color: #FFEFD5;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding: 13px 23px 8px 23px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 2s;
+}
+.create-dev-btn:hover{
+ background-color: #659DBD ;
+}
+
+
+
+
