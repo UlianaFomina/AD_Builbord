@@ -11,13 +11,18 @@ export default class AuthService {
     }
 
     static async registration(username, email, password) {
-        return await api.post("/api/v1/user", {username, email, password})
+        return await api.post("/api/v1/user/create", {
+            'username': username,
+            'password': password,
+            'email': email,
+        })
     }
 
     static async logout() {
         console.log("REMOVED")
         localStorage.removeItem('token')
         localStorage.removeItem('username')
+        localStorage.removeItem('role')
         console.log(localStorage.getItem('token'))
         console.log(localStorage.getItem('username'))
     }

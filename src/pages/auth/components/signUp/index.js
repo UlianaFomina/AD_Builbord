@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import { useForm } from "react-hook-form";
 import "./index.css";
+import {Context} from "../../../../index";
+import {useNavigate} from "react-router-dom";
+import AuthService from "../../../../api/service/AuthService";
 
 export const SignUp = ({ ...props }) => {
   let name1 = document.getElementsByClassName("sign-up-wrap");
@@ -25,6 +28,12 @@ export const SignUp = ({ ...props }) => {
 
   const { register, handleSubmit } = useForm();
 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+
+  const navigate = useNavigate()
+
   return (
     <div className="sign-up-wrap">
       <div className="sign-up">
@@ -33,24 +42,32 @@ export const SignUp = ({ ...props }) => {
           <form
             className="auth-form"
             onSubmit={handleSubmit((data) => {
-              console.log(data);
+              AuthService.registration(username, email, password).then(r => {
+                chageClassName()
+              })
             })}
           >
             <input
               {...register("username")}
               placeholder="username"
               className="auth-input sign-up-form-input"
+              onChange={e => setUsername(e.target.value)}
+              value={username}
             />
             <input
               {...register("email")}
               placeholder="email"
               type="email"
               className="auth-input sign-up-form-input"
+              onChange={e => setEmail(e.target.value)}
+              value={email}
             />
             <input
               {...register("password")}
               placeholder="password"
               className="auth-input sign-up-form-input"
+              onChange={e => setPassword(e.target.value)}
+              value={password}
             />
             <div className="auth-btn-box">
               <input type="submit" className="auth-btn" />
