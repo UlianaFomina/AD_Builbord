@@ -1,0 +1,44 @@
+.wrap{
+    background-color: #104050;
+    min-height: 100vh;
+}
+.blocked-content{
+    padding: 0 5%;
+    margin-top: 25vh;
+}
+.blocked-title{
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 70px;
+    color: #ffefd5;
+    font-family: var(--titleFont);
+    text-transform: uppercase;
+    padding-bottom: 5vh;
+}
+.blocked-btn-box{
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+.blocked-btn{
+    padding: 20px 25px;
+    border: 3px solid #659DBD;
+    border-radius: 20px;
+    margin-right: 25px;
+    cursor: pointer;
+    transition: 2s;
+    background-color: transparent;
+}
+.blocked-btn:hover{
+    background-color: #659DBD;
+}
+.blocked-btn-text{
+    padding-top: 5px;
+    font-family: var(--mainFont);
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #FFEFD5
+}

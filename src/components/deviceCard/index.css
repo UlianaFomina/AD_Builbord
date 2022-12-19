@@ -27,3 +27,88 @@
 .device-card-btn:last-child{
     margin: 0;
 }
+.device-attache{
+    display: none;
+}
+
+.device-attache-active{
+    height: 100vh;
+    width: 80vw;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    animation: active 2s;
+}
+
+@keyframes active {
+    from{
+        top: -1000px
+    }
+    to{
+        top:0;
+    }
+}
+.device-attache-content{
+    overflow-y: scroll;
+    margin: 0 auto;
+    background-color: #659DBD;
+    width: 700px;
+    height: 500px;
+    padding: 30px 50px;
+}
+.device-attache-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.device-attache-title{
+    font-family: var(--mainFont);
+    font-size: 30px;
+    color:#FFEFD5;
+    text-transform: uppercase;
+}
+.device-attache-btn-close{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: 1s;
+}
+.device-attache-btn-close:hover{
+    opacity: 0.5;
+}
+.device-attache-svg{
+    width: 25px;
+    fill: #FFEFD5;
+}
+.device-attache-form{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+.device-attache-btn{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 2s;
+    padding: 10px 0;
+}
+.device-attache-btn:hover{
+    opacity: 0.4;
+    border: 1px solid #FFEFD5
+}
+.device-attache-text{
+    font-family: var(--mainFont);
+    font-size: 25px;
+    color: #104050;
+    text-transform: uppercase;
+}
+.device-attache-img{
+    width: 250px;
+}

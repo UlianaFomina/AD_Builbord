@@ -7,6 +7,8 @@ import { Devices } from "../pages/devices";
 import { CreateAd } from "../pages/createAd";
 import { CreateDevice } from "../pages/createDevice";
 import { Users } from "../pages/users";
+import { NotFound } from "../pages/notFound";
+import { Blocked } from "../pages/blocked";
 
 export const Routing = ({ ...props }) => {
   const location = useLocation();
@@ -20,6 +22,8 @@ export const Routing = ({ ...props }) => {
       <Route path="/devices" element={<Devices />} />
       <Route path="/devices/create" element={<CreateDevice />} />
       <Route path="/users" element={<Users />} />
+      <Route path="/notFound" element={<NotFound/>} />
+      <Route path="/blocked" element={<Blocked/>}/>
     </Routes>
   );
 };
