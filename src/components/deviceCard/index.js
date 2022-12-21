@@ -70,8 +70,6 @@ export const DeviceCard = ({ ...props }) => {
             </button>
           )}
           <button onClick={() => setIsVisible(true)} className="devices-btn device-card-btn">Attache ad</button>
-          <button className="devices-btn device-card-btn"> edit</button>
-          <button className="devices-btn device-card-btn">delete</button>
         </div>
       </div>
       <div className={isVisible ? "device-attache-active" : "device-attache"}>
