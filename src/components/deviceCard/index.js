@@ -14,6 +14,7 @@ export const DeviceCard = ({ ...props }) => {
   const { handleSubmit } = useForm();
   const [isVisible, setIsVisible] = useState(false)
   const [advertisement, setAdvertisement] = useState([])
+  const [advertisementDevice, setAdDev] = useState([])
   async function getAdvertisement(){
     try{
       let getAdvertisement = [];
@@ -23,9 +24,20 @@ export const DeviceCard = ({ ...props }) => {
       console.log(e.message)
     }
   }
+
+  async function getById() {
+    try {
+      let getDevices = [];
+      getDevices = await DeviceService.getById(deviceId);
+      setAdDev(getDevices.data.advertisements)
+    } catch (e) {
+      console.log(e.message)
+    }
+  }
   useEffect( () => {
     getAdvertisement();
-  }, [advertisement])
+    getById()
+  }, [advertisement, advertisementDevice])
   async function changeDeviceStatus() {
     await DeviceService.toggleDeviceStatus(deviceId);
   }
@@ -45,7 +57,14 @@ export const DeviceCard = ({ ...props }) => {
       <div className="device-card-box">
         <p className="device-card-text device-card-sub">
           {" "}
-          Attached AD: <span className="device-card-text"> ad title</span>
+          Attached AD:
+          {advertisementDevice.map((el, i) => {
+            if(advertisementDevice.length === i + 1) {
+              return (<span className="device-card-text"> {el.title}</span>)
+            }else {
+              return (<span className="device-card-text"> {el.title},</span>)
+            }
+          })}
         </p>
         <p className="device-card-text device-card-sub">
           {" "}

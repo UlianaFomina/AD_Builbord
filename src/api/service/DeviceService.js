@@ -27,6 +27,12 @@ export default class DeviceService {
         return devices;
     }
 
+    static async getById(id) {
+        const device = await api.get(`/api/v1/device/${id}`)
+
+        return device;
+    }
+
     static async toggleDeviceStatus(deviceId) {
         console.log(deviceId)
         const id = Number(deviceId)
