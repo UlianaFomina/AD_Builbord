@@ -9,6 +9,7 @@ export const Header = ({ ...props }) => {
     const role = localStorage.getItem("role")
     function logout() {
         AuthService.logout().then(r => navigate('/'));
+        navigate("/")
     }
 
   return (

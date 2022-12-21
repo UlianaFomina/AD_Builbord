@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
 import img from "../../assets/card.jpg";
 import "./index.css";
 import AdvertisementService from "../../api/service/AdvertisementService";
 import DeviceService from "../../api/service/DeviceService";
+import PdfExportService from "../../api/service/PdfExportService";
 
 export const DeviceCard = ({ ...props }) => {
   const status = props.status === true ? "Active" : "Not active";
@@ -12,9 +13,25 @@ export const DeviceCard = ({ ...props }) => {
   const impressionsPerHour = props.impressionsPerHour;
   const { handleSubmit } = useForm();
   const [isVisible, setIsVisible] = useState(false)
-
+  const [advertisement, setAdvertisement] = useState([])
+  async function getAdvertisement(){
+    try{
+      let getAdvertisement = [];
+      getAdvertisement = await AdvertisementService.getMyAd(true);
+      setAdvertisement(getAdvertisement.data)
+    }catch (e){
+      console.log(e.message)
+    }
+  }
+  useEffect( () => {
+    getAdvertisement();
+  }, [advertisement])
   async function changeDeviceStatus() {
     await DeviceService.toggleDeviceStatus(deviceId);
+  }
+
+  async function attachAd(deviceId, adId) {
+    await DeviceService.attachAdvertisementToDevice(deviceId, adId)
   }
 
   return (
@@ -72,15 +89,18 @@ export const DeviceCard = ({ ...props }) => {
               </svg>
             </button>
           </div>
-          <form
+          <div
             className="device-attache-form"
-            onSubmit={handleSubmit((data) => {})}
           >
-            <button type="submit" className="device-attache-btn">
-              <p className="device-attache-text">Title1</p>
-              <img alt="img" src={img} className="device-attache-img" />
-            </button>
-          </form>
+            {advertisement.map(el => {
+              return(
+                  <button type="submit" onClick={() => attachAd(deviceId, el.id)} className="device-attache-btn">
+                    <p className="device-attache-text">{el.title}</p>
+                    <img alt="img" src={el.imageUrl} className="device-attache-img" />
+                  </button>
+              )
+            })}
+          </div>
         </div>
       </div>
     </div>

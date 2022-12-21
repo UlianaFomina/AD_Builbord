@@ -1,12 +1,15 @@
 import React from "react";
 import cardImg from "../../assets/card.jpg";
 import "./index.css";
+import AdvertisementService from "../../api/service/AdvertisementService";
 export const AdCard = ({ ...props }) => {
   const pathname = window.location.pathname;
+  const id = props.id;
   const title = props.title
   const description = props.description
   const imageUrl = props.imageUrl;
-  const username = localStorage.getItem("username")
+  const username = props.name
+  const status = props.status
   return (
     <div style={props.flexDirection} className={pathname === "/main" ? "card" : "ad-card-content"}>
       <div
@@ -36,10 +39,11 @@ export const AdCard = ({ ...props }) => {
           </div>
           <div className={pathname === "/main" ? "card-btn-box" : "ad-card-btn-box"}>
             <button className="card-btn">
-              <p className="card-btn-text">Edit</p>
-            </button>
-            <button className="card-btn">
-              <p className="card-btn-text">Delete</p>
+              {
+                status === false
+                    ? <p className="card-btn-text" onClick={() => AdvertisementService.hideById(id)}>Hide</p>
+                    : <p className="card-btn-text" onClick={() => AdvertisementService.hideById(id)}>Show</p>
+              }
             </button>
           </div>
         </div>

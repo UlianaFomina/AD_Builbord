@@ -3,6 +3,7 @@ import AuthService from "../service/AuthService";
 import axios from "axios";
 import api, {API_URL} from "../http/api";
 import refreshApi from "../http/refreshApi";
+import UserService from "../service/UserService";
 
 export default class Store {
     user = {}
@@ -45,6 +46,12 @@ export default class Store {
         }catch (e){
             console.log(e.response.data.message)
         }
+    }
+
+    async getUserByUsername(username) {
+        const user = await UserService.getUserByUsername(username)
+
+        return user;
     }
 
     async logout() {

@@ -13,14 +13,24 @@ export default class AdvertisementService {
         return await api.post(`/api/v1/advertisement/${username}`, formData);
     }
 
-    static async getMyAd(){
+    static async getMyAd(isAppear){
+        let advertisements;
         let username = localStorage.getItem("username");
-        const advertisements = await api.get(`/api/v1/advertisement/my/${username}`);
+
+        if(isAppear){
+            advertisements = await api.get(`/api/v1/advertisement/my/${username}?isAppear=true`);
+        }else {
+            advertisements = await api.get(`/api/v1/advertisement/my/${username}`);
+        }
         return advertisements;
     }
 
     static async getAll() {
         const advertisements = await api.get('/api/v1/advertisement/all');
         return advertisements;
+    }
+
+    static async hideById(id) {
+        await api.delete(`/api/v1/advertisement/${id}`)
     }
 }

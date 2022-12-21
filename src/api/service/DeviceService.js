@@ -32,4 +32,13 @@ export default class DeviceService {
         const id = Number(deviceId)
         await api.delete(`/api/v1/device/${id}`);
     }
+
+    static async attachAdvertisementToDevice(deviceId, adId) {
+        await api.post(`/api/v1/device/attach/${deviceId}/${adId}`)
+    }
+
+    static async getAllActive() {
+        const devices = await api.get("/api/v1/device?isActive=true");
+        return devices;
+    }
 }

@@ -25,7 +25,7 @@ export const UserCard = ({ ...props }) => {
         <div className="user-card-btn-box">
           <button className="user-card-btn">check devices</button>
             {
-                props.isBlocked === true
+                props.status === true
                     ? <button className="user-card-btn" onClick={toggleUserStatus}>unblock</button>
                     : <button className="user-card-btn" onClick={toggleUserStatus}>block</button>
             }

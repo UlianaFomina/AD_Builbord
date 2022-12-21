@@ -55,20 +55,6 @@ export const CreateDevice = ({ ...props }) => {
               <option className="create-dev-option" value="5">5</option>
             </select>
           </div>
-          <div className="create-dev-select-box">
-            <p className="create-dev-text"> Attach AD: :</p>
-            <select
-              {...register("amount")}
-              className="create-dev-input create-dev-select"
-              onChange={e => setAd(e.target.value)}
-              value={ad}
-            >
-              <option className="create-dev-option" value="1" selected>
-                none
-              </option>
-              <option className="create-dev-option" value="title1">title1</option>
-            </select>
-          </div>
           <button type="submit" className="create-dev-btn">
             create
           </button>

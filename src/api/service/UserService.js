@@ -11,6 +11,11 @@ export default class UserService {
         return resultUsers;
     }
 
+    static async getUserByUsername(username) {
+        let user = await api.get(`/api/v1/user/${username}`);
+        return user;
+    }
+
     static async toggleUserStatus(userId){
         const id = Number(userId)
         await api.delete(`/api/v1/user/${id}`);

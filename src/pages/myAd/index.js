@@ -10,6 +10,7 @@ import PdfExportService from "../../api/service/PdfExportService";
 export const MyAd = ({ ...props }) => {
     const [advertisement, setAdvertisement] = useState([])
     const role = localStorage.getItem("role");
+    const username = localStorage.getItem("username")
     async function getAdvertisement(){
         try{
             let getAdvertisement = [];
@@ -48,7 +49,7 @@ export const MyAd = ({ ...props }) => {
       </div>
       <div className="ad-list">
           {advertisement.map(el => {
-              return (<AdCard title={el.title} description={el.description} imageUrl={el.imageUrl} flexDirection={{ flexDirection: "column" }} />)
+              return (<AdCard name = {username} status={el.isAppear} id={el.id} title={el.title} description={el.description} imageUrl={el.imageUrl} flexDirection={{ flexDirection: "column" }} />)
           })}
       </div>
     </div>
